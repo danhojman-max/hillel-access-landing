@@ -1,6 +1,10 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import {
+  AGE_ELIGIBILITY_ERROR,
+  isEligibleAge,
+} from "@/lib/google-form";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
@@ -20,6 +24,21 @@ export function InscriptionForm() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    const birthYear = Number(formData.get("birthYear"));
+    const birthMonth = Number(formData.get("birthMonth"));
+    const birthDay = Number(formData.get("birthDay"));
+
+    if (
+      Number.isInteger(birthYear) &&
+      Number.isInteger(birthMonth) &&
+      Number.isInteger(birthDay) &&
+      !isEligibleAge(birthYear, birthMonth, birthDay)
+    ) {
+      setState("error");
+      setErrorMessage(AGE_ELIGIBILITY_ERROR);
+      return;
+    }
 
     const payload = {
       nombre: formData.get("nombre"),
@@ -235,9 +254,16 @@ export function InscriptionForm() {
           </label>
 
           {state === "error" && errorMessage && (
-            <p className="text-sm text-red-400" role="alert">
+            <div
+              className={`border px-4 py-4 text-sm leading-relaxed ${
+                errorMessage === AGE_ELIGIBILITY_ERROR
+                  ? "border-gold/60 bg-gold/10 text-foreground"
+                  : "border-red-400/40 bg-red-400/5 text-red-400"
+              }`}
+              role="alert"
+            >
               {errorMessage}
-            </p>
+            </div>
           )}
 
           <button

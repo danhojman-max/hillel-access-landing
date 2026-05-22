@@ -16,6 +16,36 @@ export const CHECKBOX_CONFIRM_VALUE = "Confirmo";
 
 export const MIN_DONACION_MENSUAL = 20000;
 
+export const MIN_AGE = 18;
+export const MAX_AGE = 35;
+
+export const AGE_ELIGIBILITY_ERROR =
+  "Este programa es para jovenes judios entre 18 y 35 años";
+
+export function getAge(
+  birthYear: number,
+  birthMonth: number,
+  birthDay: number
+): number {
+  const today = new Date();
+  const birth = new Date(birthYear, birthMonth - 1, birthDay);
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDiff = today.getMonth() - birth.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+export function isEligibleAge(
+  birthYear: number,
+  birthMonth: number,
+  birthDay: number
+): boolean {
+  const age = getAge(birthYear, birthMonth, birthDay);
+  return age >= MIN_AGE && age <= MAX_AGE;
+}
+
 export type InscripcionPayload = {
   nombre: string;
   birthYear: number;
@@ -77,6 +107,10 @@ export function validateInscripcion(
     date.getDate() !== day
   ) {
     return { ok: false, error: "Ingresá una fecha de nacimiento válida." };
+  }
+
+  if (!isEligibleAge(year, month, day)) {
+    return { ok: false, error: AGE_ELIGIBILITY_ERROR };
   }
 
   if (typeof celular !== "string" || !CELULAR_REGEX.test(celular.trim())) {

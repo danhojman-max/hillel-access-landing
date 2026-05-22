@@ -16,6 +16,11 @@ npm run dev
 
 Abrí [http://localhost:3000](http://localhost:3000).
 
+## Reglas del formulario de inscripción
+
+- Edad al momento de inscribirse: entre **18 y 35 años** (según fecha de nacimiento).
+- Donación mensual mínima: **$20.000** (validado en servidor y en UI).
+
 ## Probar el envío al Google Form
 
 1. Completá el formulario de inscripción en la landing con datos de prueba.
