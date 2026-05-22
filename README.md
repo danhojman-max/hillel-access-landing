@@ -22,18 +22,20 @@ Abrí [http://localhost:3000](http://localhost:3000).
 2. En Google Forms, abrí el formulario → pestaña **Respuestas** y verificá que llegó la fila nueva.
 3. Si no llega, revisá que los `entry.*` en `lib/google-form.ts` coincidan con el formulario actual (cambian si se agregan o quitan preguntas en Google Forms).
 
-## Deploy en Vercel
+## Sitio en producción
 
-1. Subí el proyecto a un repositorio Git (GitHub, GitLab, etc.).
-2. En [vercel.com](https://vercel.com), **Add New Project** e importá el repo.
-3. Vercel detecta Next.js automáticamente. No hace falta configuración extra.
-4. Deploy. Cada push a la rama principal vuelve a desplegar.
+- **URL pública:** https://hillel-access-landing.vercel.app
+- **Repositorio:** https://github.com/danhojman-max/hillel-access-landing
 
-Alternativa con CLI:
+Cada push a `main` en GitHub vuelve a desplegar automáticamente en Vercel.
+
+## Deploy en Vercel (manual)
+
+Si necesitás redeployar desde tu máquina:
 
 ```bash
-npm i -g vercel
-vercel
+npm install
+npx vercel --prod
 ```
 
 ## Estructura
