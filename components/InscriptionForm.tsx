@@ -214,10 +214,10 @@ export function InscriptionForm() {
               type="text"
               required
               className={inputClass}
-              placeholder="Mínimo $25.000"
+              placeholder="Mínimo $20.000"
             />
             <p className="mt-2 text-xs text-muted">
-              Recordá que es un mínimo de $25.000. Podés comprometer un monto mayor.
+              Recordá que es un mínimo de $20.000. Podés comprometer un monto mayor.
             </p>
           </div>
 

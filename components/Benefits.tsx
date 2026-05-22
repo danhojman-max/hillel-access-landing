@@ -45,11 +45,6 @@ export function Benefits() {
         <h2 className="mt-4 font-serif text-4xl tracking-wide sm:text-5xl">
           ¿Cuáles son los beneficios?
         </h2>
-        <p className="mt-6 max-w-2xl text-muted">
-          Acceso prioritario a un conjunto de oportunidades pensadas para quienes
-          forman parte activa de la comunidad Hillel.
-        </p>
-
         <div className="mt-16 grid gap-6 md:grid-cols-2">
           <article className="border border-gold-subtle p-8 transition-all hover:border-gold/50 hover:bg-surface/30 md:col-span-2">
             <div className="mb-4 h-px w-12 bg-gold/40" />

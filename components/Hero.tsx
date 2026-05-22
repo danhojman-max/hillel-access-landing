@@ -14,8 +14,7 @@ export function Hero() {
 
         <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
           Un programa para quienes buscan acceso prioritario a las oportunidades
-          que lanzamos: eventos, viajes, espacios y experiencias exclusivas de
-          la comunidad Hillel.
+          que lanzamos: eventos, viajes, espacios y experiencias exclusivas.
         </p>
 
         <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

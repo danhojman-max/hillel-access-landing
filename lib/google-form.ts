@@ -14,7 +14,7 @@ export const GOOGLE_FORM_ENTRIES = {
 
 export const CHECKBOX_CONFIRM_VALUE = "Confirmo";
 
-export const MIN_DONACION_MENSUAL = 25000;
+export const MIN_DONACION_MENSUAL = 20000;
 
 export type InscripcionPayload = {
   nombre: string;
