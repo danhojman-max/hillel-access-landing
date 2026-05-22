@@ -25,9 +25,20 @@ Abrí [http://localhost:3000](http://localhost:3000).
 ## Sitio en producción
 
 - **URL pública:** https://hillel-access-landing.vercel.app
+- **Subdominio (pendiente DNS):** https://access.hillelargentina.org.ar — ver [docs/DNS-SETUP.md](docs/DNS-SETUP.md)
 - **Repositorio:** https://github.com/danhojman-max/hillel-access-landing
 
 Cada push a `main` en GitHub vuelve a desplegar automáticamente en Vercel.
+
+### Dominio custom `access.hillelargentina.org.ar`
+
+El dominio ya está agregado en Vercel. Falta un registro **A** en **Azure DNS**:
+
+| Host | Tipo | Valor |
+|------|------|-------|
+| `access` | A | `76.76.21.21` |
+
+Instrucciones completas: [docs/DNS-SETUP.md](docs/DNS-SETUP.md)
 
 ## Deploy en Vercel (manual)
 
