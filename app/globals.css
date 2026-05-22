@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-text: #f5f3ef;
+  --color-muted: #a8a29e;
+  --color-gold: #b8a066;
+  --color-gold-muted: rgba(184, 160, 102, 0.2);
+  --color-border: rgba(184, 160, 102, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #f5f3ef 0%, #b8a066 50%, #f5f3ef 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gold-subtle {
+    border-color: var(--color-border);
+  }
+
+  .glow-radial {
+    background: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(184, 160, 102, 0.12),
+      transparent 70%
+    );
+  }
+}
